@@ -85,7 +85,7 @@ void print_can_frame(candle_frame_t *pframe,bool timestamp)
 	if (timestamp)
 		printf("%9.4f ", pframe->timestamp_us / 1000000.0);
 	
-	printf("%8x %1d ",pframe->can_id,pframe->can_dlc);
+	printf("%8x %1d ",candle_frame_id(pframe),pframe->can_dlc);
 
 	count = pframe->can_dlc;
 	if (count > 8)
